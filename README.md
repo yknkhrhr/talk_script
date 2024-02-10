@@ -1,24 +1,48 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名: talk_script
 
-Things you may want to cover:
+## アプリケーション概要
+クレジットカード会社の紛失係コールセンター用業務アプリ。  
+「紛失」か「不正利用」かを選択の上、カード券種ごとに振られているコードを入力すると、券種に応じてトークスクリプトを表示することができる。
 
-* Ruby version
+## URL
 
-* System dependencies
 
-* Configuration
+## テスト用アカウント
 
-* Database creation
 
-* Database initialization
+## 利用方法
+・「紛失」か「不正利用」かを選択  
+・card-codeに「0001〜0020」の番号を入力するとカード名称が表示される  
+・停止するカードのチェックボックスを選択  
+・確定ボタンを押すと、スクリプトが表示される  
 
-* How to run the test suite
+## アプリケーションを作成した背景
+勤務先（クレジットカード会社の紛失係）での問題解決のために作成しました。  
+現在、基本的なトークスクリプトやカードの種類毎の特殊スクリプト、送付方法、手数料一覧などの資料は用意されていますが、それぞれの資料が独立していて相互アクセスしづらく案内漏れや間違いが多発し、オペレーターの負担となっています。また、難易度の高さゆえ新人が定着しづらく、採用・研修に関わるコストや人的リソースの部分で常に疲弊している状況です。  
+このアプリを実装することで業務の難易度を下げ、人員の定着を図りたいと考えています。  
 
-* Services (job queues, cache servers, search engines, etc.)
+## 洗い出した要件
+https://docs.google.com/spreadsheets/d/1Q_g8oMrWcd2Ip5evtlk2rIAOXthG_uMxuA4Nr4-09ic/edit#gid=982722306
 
-* Deployment instructions
+## 実装した機能についての画像やGIFおよびその説明
 
-* ...
+
+## データベース設計
+![ER図](https://github.com/yknkhrhr/talk_script/assets/146395389/608e3a3a-a74c-442d-9798-dec503d8adec)
+
+## 画面遷移図
+![transition](https://github.com/yknkhrhr/talk_script/assets/146395389/edda8139-73cf-4075-8c46-4c80c8e4369d)
+
+## ローカルでの動作方法
+
+
+## 工夫したポイント
+
+
+## 改善点
+
+
+## 制作時間
+
