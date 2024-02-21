@@ -1,0 +1,83 @@
+.main {
+  padding-left: 30px;
+
+}
+
+.talks-wrap {
+  background-color: #eff2f4;
+  display:inline-block;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.selections {
+  display: flex;
+  padding: 20px 20px 0 20px;
+}
+
+.styled {
+  margin: 0 20px;
+}
+
+.card-wrap {
+  display: flex;
+}
+
+
+.select-wrap {
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+  background-color: #cde4ff;
+}
+
+
+.double-wrap {
+  display: flex;
+  margin: 20px,20px;
+}
+
+p.double-wrap {
+  text-align: center;
+}
+
+.search-button {
+  margin-left: 100px;
+}
+
+.one-wrap {
+  display: flex;
+}
+
+.talks-wrap-loss {
+  background-color: #6396d4;
+  width : calc(100% / 3);
+  margin: 0 10px 0 10px;
+  padding-bottom: 3px;
+  border-radius: 10px;
+}
+
+.card-title-wrap {
+  background-color: #6396d4;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 0 0 0 10px;
+}
+
+.title-wrap {
+  background-color: #99c1f1;
+  padding: 0 10px 0 10px;
+  margin: 0 3px 0 3px;
+}
+
+.script-wrap {
+  background-color: #eff2f4;
+  padding: 0 10px 10px 10px;
+  margin: 0 3px 0 3px;
+}
+
+.script-wrap p {
+  margin: 0;
+  padding: 0;
+}

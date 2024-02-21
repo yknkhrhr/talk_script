@@ -1,0 +1,50 @@
+<div class="main">
+  <h2>紛失スクリプト</h2>
+    <div class= "talks-wrap">
+      <p>①「カードの紛失（盗難）ですね。それではお客様情報をお調べしますので、お名前、生年月日をお願いいたします。」</p>
+      <p>②「お客様は○○カードと、△△カードと、◇◇カードをお持ちですが、どのカードのご紛失ですか？」<br>
+          （ETC有の場合）「◯◯カードにはETCカードの発行もございますが、こちらは紛失されてますか？」</p>
+      <p>③「紛失（盗難）の状況についてお伺いします。カードの紛失日時を教えてください」</p>
+      <p>④「カードは再発行なさいますか？　それとも解約されますか？」</p>
+    </div>
+
+
+<%= form_with url: search_losses_path, method: :get do |f| %>
+  <div class="card-wrap">
+    <% 3.times do |i| %>
+      <div class="select-wrap">
+        <%= f.label "card[#{i}][card_code]", "カードコード" %>
+        <%= f.text_field "card[#{i}][card_code]", style: "width: 100px;" %>
+        <div class="double-wrap">
+          <div class="loss-wrap">
+            <div><br>
+            <font color="red">　紛失したカード</font></div>
+            <%= f.radio_button "card[#{i}][lost_card]", "credit_card" %>
+            <%= f.label "card[#{i}][lost_card]", "クレジットカード" %><br>
+            <%= f.radio_button "card[#{i}][lost_card]", "etc_card" %>
+            <%= f.label "card[#{i}][lost_card]", "ETCカード" %><br>
+            <%= f.radio_button "card[#{i}][lost_card]", "both_card" %>
+            <%= f.label "card[#{i}][lost_card]", "両方" %><br>
+          </div>
+          <div class="procedure-wrap">
+            <div><br>
+            <font color="blue">　手続き</font></div>
+            <%= f.radio_button "card[#{i}][procedure]", "reissue" %>
+            <%= f.label "card[#{i}][procedure]", "再発行" %><br>
+            <%= f.radio_button "card[#{i}][procedure]", "cancell" %>
+            <%= f.label "card[#{i}][procedure]", "解約" %><br>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="search-button">
+    <%= f.submit "検索" %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+</div>
