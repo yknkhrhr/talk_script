@@ -16,6 +16,16 @@
   padding: 20px 20px 0 20px;
 }
 
+.red-text {
+  color: red;
+  font-size: 13px;
+}
+
+.blue-text {
+  color: blue;
+  font-size: 13px;
+}
+
 .styled {
   margin: 0 20px;
 }
@@ -35,7 +45,7 @@
 
 .double-wrap {
   display: flex;
-  margin: 20px,20px;
+  margin: 10px 10px;
 }
 
 p.double-wrap {

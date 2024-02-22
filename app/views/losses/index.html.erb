@@ -17,8 +17,7 @@
         <%= f.text_field "card[#{i}][card_code]", style: "width: 100px;" %>
         <div class="double-wrap">
           <div class="loss-wrap">
-            <div><br>
-            <font color="red">　紛失したカード</font></div>
+            <div class="red-text">　紛失したカード</div>
             <%= f.radio_button "card[#{i}][lost_card]", "credit_card" %>
             <%= f.label "card[#{i}][lost_card]", "クレジットカード" %><br>
             <%= f.radio_button "card[#{i}][lost_card]", "etc_card" %>
@@ -27,8 +26,7 @@
             <%= f.label "card[#{i}][lost_card]", "両方" %><br>
           </div>
           <div class="procedure-wrap">
-            <div><br>
-            <font color="blue">　手続き</font></div>
+            <div class="blue-text">　手続き</div>
             <%= f.radio_button "card[#{i}][procedure]", "reissue" %>
             <%= f.label "card[#{i}][procedure]", "再発行" %><br>
             <%= f.radio_button "card[#{i}][procedure]", "cancell" %>
