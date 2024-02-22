@@ -1,0 +1,2 @@
+class Fraud < ApplicationRecord
+end

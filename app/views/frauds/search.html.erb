@@ -1,0 +1,94 @@
+<div class="frauds-main">
+
+  <h2>不正利用スクリプト</h2>
+
+  <div class="one-wrap">
+  <% @frauds.each_with_index do |fraud, index| %>
+    <div class="three-wrap">
+      <% if fraud.present? %>
+        <div class="card-title-wrap">
+        <span style="font-size: 20px;"><%= fraud.card_name %></span><br>
+        <span style="font-size: 13px;">手続き：
+         <% if params[:card][index.to_s][:fraud_card] == "credit_card" %>クレジットカード
+        <% elsif params[:card][index.to_s][:fraud_card] == "etc_card" %>ETCカード
+        <% else params[:card][index.to_s][:fraud_card] == "both_card" %>クレカ・ETC
+        <% end %>       
+        <% if params[:card][index.to_s][:procedure] == "reissue" %>再発行
+        <% else params[:card][index.to_s][:procedure] == "cancell" %>解約
+        <% end %></span>
+        </div>
+
+        <%# 再発行の処理 %>
+          <% if params[:card][index.to_s][:procedure] == "reissue" %>
+            <% if params[:card][index.to_s][:fraud_card] == "credit_card" %>
+              <div class= "title-wrap">送付方法</div>
+              <div class="script-wrap"><%= simple_format(fraud.send_script) %></div>
+              <div class= "title-wrap">再発行手数料</div>
+              <div class="script-wrap"><% fee = fraud.card_fee %>
+              <%= simple_format(fraud.fee_script.gsub("円", "#{fee}円")) %></div>
+              <div class= "title-wrap">公共料金等連絡</div>
+              <div class="script-wrap"><%= simple_format(fraud.public_script) %></div>
+              <div class= "title-wrap">特殊カード案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.specific_script) %></div>
+            <% end %>
+
+            <% if params[:card][index.to_s][:fraud_card] == "etc_card" %>
+              <div class= "title-wrap">送付方法</div>
+              <div class="script-wrap"><%= simple_format(fraud.send_script) %></div>
+              <div class= "title-wrap">再発行手数料</div>
+              <div class="script-wrap"><% fee = fraud.etc_fee %>
+              <%= simple_format(fraud.fee_script.gsub("円", "#{fee}円")) %></div>
+              <div class= "title-wrap">ETC再発行注意</div>
+              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+            <% end %>
+
+            <% if params[:card][index.to_s][:fraud_card] == "both_card" %>
+              <div class= "title-wrap">送付方法</div>
+              <div class="script-wrap"><%= simple_format(fraud.send_script) %></div>
+              <div class= "title-wrap">再発行手数料</div>
+              <div class="script-wrap"><% fee = fraud.card_fee + fraud.etc_fee %>
+              <%= simple_format(fraud.fee_script.gsub("円", "#{fee}円")) %></div>
+              <div class= "title-wrap">公共料金等連絡</div>
+              <div class="script-wrap"><%= simple_format(fraud.public_script) %></div>
+              <div class= "title-wrap">特殊カード案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.specific_script) %></div>
+              <div class= "title-wrap">ETC再発行注意</div>
+              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+            <% end %>
+          <% end %>
+          
+        <%# 解約の処理 %>
+          <% if params[:card][index.to_s][:procedure] == "cancell" %>
+            <% if params[:card][index.to_s][:fraud_card] == "credit_card" %>
+              <div class= "title-wrap">解約案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_card_script) %></div>
+              <div class= "title-wrap">解約特殊案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_specific_script) %></div>
+            <% end %>
+            <% if params[:card][index.to_s][:fraud_card] == "etc_card" %>
+              <div class= "title-wrap">ETC解約案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+            <% end %>
+            <% if params[:card][index.to_s][:fraud_card] == "both_card" %>
+              <div class= "title-wrap">解約案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_card_script) %></div>
+              <div class= "title-wrap">解約特殊案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_specific_script) %></div>
+              <div class= "title-wrap">ETC解約案内</div>
+              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+            <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+  <div class="under-wrap">
+    <div class= "common-wrap">
+      <p>【共通スクリプト】</p>
+      <p>「それでは今回お手続きするカードは◯◯カードでよろしいでしょうか？」</p>
+      <p>「わたくし、◯◯が承りました。お電話ありがとうございました」<br>
+    </div>
+  </div>
+</div>
+
+

@@ -1,39 +1,56 @@
-.main {
+/*selections画面*/
+.selections-main {
   padding-left: 30px;
-
-}
-
-.talks-wrap {
-  background-color: #eff2f4;
-  display:inline-block;
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 20px;
 }
 
 .selections {
   display: flex;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 250px;
 }
+
+.select-button {
+  margin-right: 30px;
+}
+
+/*losses画面*/
+.losses-main {
+  padding-left: 30px;
+}
+
+/*fraudss画面*/
+.frauds-main {
+  padding-left: 30px;
+}
+
+/*共通CSS*/
+.common-wrap {
+  background-color: #eff2f4;
+  display:inline-block;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.under-wrap {
+  margin-top: 20px;
+}
+
+
 
 .red-text {
   color: red;
   font-size: 13px;
+  padding-left: 30px;
 }
 
 .blue-text {
   color: blue;
   font-size: 13px;
-}
-
-.styled {
-  margin: 0 20px;
+  padding-left: 30px;
 }
 
 .card-wrap {
   display: flex;
 }
-
 
 .select-wrap {
   border-radius: 10px;
@@ -53,14 +70,14 @@ p.double-wrap {
 }
 
 .search-button {
-  margin-left: 100px;
+  margin-left: 400px;
 }
 
 .one-wrap {
   display: flex;
 }
 
-.talks-wrap-loss {
+.three-wrap {
   background-color: #6396d4;
   width : calc(100% / 3);
   margin: 0 10px 0 10px;

@@ -1,0 +1,50 @@
+<div class="frauds-main">
+  <h2>不正利用スクリプト</h2>
+    <div class= "common-wrap">
+      <p>【共通スクリプト】</p>
+      <p>①「不正利用のご心配ですね。それではカードを停止するお手続きを致します。<br>
+           お客様情報をお調べしますので、カード番号、お名前、生年月日をお願いいたします」</p>
+      <p>②「停止ご希望のカードは○○カードですね」<br>
+          （ETC有の場合：希望があればETCの停止も受付する）</p>
+      <p>③「それではただ今からカードをお止め致します。お手元のカードは必ずご処分をお願い致します」</p>
+      <p>④「カードは再発行なさいますか？　それとも解約されますか？」</p>
+    </div>
+
+
+<%= form_with url: search_frauds_path, method: :get do |f| %>
+  <div class="card-wrap">
+    <% 3.times do |i| %>
+      <div class="select-wrap">
+        <%= f.label "card[#{i}][card_code]", "カードコード" %>
+        <%= f.text_field "card[#{i}][card_code]", style: "width: 100px;" %>
+        <div class="double-wrap">
+          <div class="loss-wrap">
+            <div class="red-text">停止するカード</div>
+            <%= f.radio_button "card[#{i}][fraud_card]", "credit_card" %>
+            <%= f.label "card[#{i}][fraud_card]", "クレジットカード" %><br>
+            <%= f.radio_button "card[#{i}][fraud_card]", "etc_card" %>
+            <%= f.label "card[#{i}][fraud_card]", "ETCカード" %><br>
+            <%= f.radio_button "card[#{i}][fraud_card]", "both_card" %>
+            <%= f.label "card[#{i}][fraud_card]", "両方" %><br>
+          </div>
+          <div class="procedure-wrap">
+            <div class="blue-text">手続き</div>
+            <%= f.radio_button "card[#{i}][procedure]", "reissue" %>
+            <%= f.label "card[#{i}][procedure]", "再発行" %><br>
+            <%= f.radio_button "card[#{i}][procedure]", "cancell" %>
+            <%= f.label "card[#{i}][procedure]", "解約" %><br>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="search-button">
+    <%= f.submit "検索" %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+</div>

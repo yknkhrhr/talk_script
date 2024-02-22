@@ -1,11 +1,13 @@
-<div class="main">
+<div class="losses-main">
   <h2>紛失スクリプト</h2>
-    <div class= "talks-wrap">
+    <div class= "common-wrap">
+      <p>【共通スクリプト】</p>
       <p>①「カードの紛失（盗難）ですね。それではお客様情報をお調べしますので、お名前、生年月日をお願いいたします。」</p>
       <p>②「お客様は○○カードと、△△カードと、◇◇カードをお持ちですが、どのカードのご紛失ですか？」<br>
           （ETC有の場合）「◯◯カードにはETCカードの発行もございますが、こちらは紛失されてますか？」</p>
       <p>③「紛失（盗難）の状況についてお伺いします。カードの紛失日時を教えてください」</p>
-      <p>④「カードは再発行なさいますか？　それとも解約されますか？」</p>
+      <p>④「それではただ今からカードをお止め致します。もし紛失カードが見つかった場合はご処分をお願い致します」</p>
+      <p>⑤「カードは再発行なさいますか？　それとも解約されますか？」</p>
     </div>
 
 
@@ -17,7 +19,7 @@
         <%= f.text_field "card[#{i}][card_code]", style: "width: 100px;" %>
         <div class="double-wrap">
           <div class="loss-wrap">
-            <div class="red-text">　紛失したカード</div>
+            <div class="red-text">紛失したカード</div>
             <%= f.radio_button "card[#{i}][lost_card]", "credit_card" %>
             <%= f.label "card[#{i}][lost_card]", "クレジットカード" %><br>
             <%= f.radio_button "card[#{i}][lost_card]", "etc_card" %>
@@ -26,7 +28,7 @@
             <%= f.label "card[#{i}][lost_card]", "両方" %><br>
           </div>
           <div class="procedure-wrap">
-            <div class="blue-text">　手続き</div>
+            <div class="blue-text">手続き</div>
             <%= f.radio_button "card[#{i}][procedure]", "reissue" %>
             <%= f.label "card[#{i}][procedure]", "再発行" %><br>
             <%= f.radio_button "card[#{i}][procedure]", "cancell" %>

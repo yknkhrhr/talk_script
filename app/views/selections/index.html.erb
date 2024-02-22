@@ -1,21 +1,17 @@
-<div class="main">
+<div class="selections-main">
   <h2 class="title-contents">
   クレジットカード紛失係　トークスクリプト
   </h2>
 
-<div class="talks-wrap">
-  <p class="talks">
-  「お電話ありがとうございます。TCカード紛失担当◯◯です。<br>
-  　本日のご用件はカードのご紛失でしょうか。それとも不正利用のご心配でしょうか」
-  </p>
+<div class="common-wrap">
+  <p>【共通スクリプト】</p>
+  <p>「お電話ありがとうございます。TCカード紛失担当◯◯です。<br>
+  　本日のご用件はカードのご紛失でしょうか。それとも不正利用のご心配でしょうか」</p>
 </div>
 
   <div class="selections">
-    <%= button_to "紛失・盗難", losses_path ,method: :get %>
-    </button>
-    <button class="select styled" type="button">
-    不正利用
-    </button>
+    <div class="select-button"><%= button_to "紛失・盗難", losses_path ,method: :get %></div>
+    <div class="select-button"><%= button_to "不正利用", frauds_path ,method: :get %></div>
   </div>
 
 </div>

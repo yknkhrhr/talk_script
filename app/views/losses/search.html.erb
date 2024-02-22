@@ -1,10 +1,10 @@
-<div class="main">
+<div class="losses-main">
 
   <h2>紛失スクリプト</h2>
 
   <div class="one-wrap">
   <% @losses.each_with_index do |loss, index| %>
-    <div class="talks-wrap-loss">
+    <div class="three-wrap">
       <% if loss.present? %>
         <div class="card-title-wrap">
         <span style="font-size: 20px;"><%= loss.card_name %></span><br>
@@ -82,9 +82,12 @@
     </div>
   <% end %>
   </div>
-  <div class= "talks-wrap">
-    <p>「それでは今回お手続きするカードは◯◯カードでよろしいでしょうか？」</p>
-    <p>「わたくし、◯◯が承りました。お電話ありがとうございました」<br>
+  <div class= "under-wrap">
+    <div class= "common-wrap">
+      <p>【共通スクリプト】</p>
+      <p>「それでは今回お手続きするカードは◯◯カードでよろしいでしょうか？」</p>
+      <p>「わたくし、◯◯が承りました。お電話ありがとうございました」<br>
+    </div>
   </div>
 </div>
 
