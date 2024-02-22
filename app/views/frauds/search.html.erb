@@ -67,7 +67,7 @@
             <% end %>
             <% if params[:card][index.to_s][:fraud_card] == "etc_card" %>
               <div class= "title-wrap">ETC解約案内</div>
-              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_etc_script) %></div>
             <% end %>
             <% if params[:card][index.to_s][:fraud_card] == "both_card" %>
               <div class= "title-wrap">解約案内</div>
@@ -75,7 +75,7 @@
               <div class= "title-wrap">解約特殊案内</div>
               <div class="script-wrap"><%= simple_format(fraud.cancell_specific_script) %></div>
               <div class= "title-wrap">ETC解約案内</div>
-              <div class="script-wrap"><%= simple_format(fraud.etc_script) %></div>
+              <div class="script-wrap"><%= simple_format(fraud.cancell_etc_script) %></div>
             <% end %>
           <% end %>
       <% end %>
