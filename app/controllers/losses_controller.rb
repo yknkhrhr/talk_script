@@ -12,7 +12,6 @@ class LossesController < ApplicationController
           @losses[i] = Loss.find_by(card_code: params[:card]["#{i}"][:card_code])
         end
       end
-    
   end
 
   private
@@ -25,7 +24,7 @@ class LossesController < ApplicationController
         end
       end
     end
-    # 必要な情報が揃っていない場合、エラーメッセージを設定し、indexを表示する
+    # 必要な情報が揃っていない場合、エラーメッセージを表示させる
     flash.now[:alert] = "「カードコード」、「紛失したカード」、「手続き」を入力してください"
     render :index
   end
